@@ -11,10 +11,10 @@ var value;
 
 limit.children[1].value = 14;
 value = Math.round(14 / 100 * 28) + 4;
-Lower_case.checked=true;
-Upper_case.checked=true;
-Numbers.checked=true;
-Symbols.checked=true;
+Lower_case.checked = true;
+Upper_case.checked = true;
+Numbers.checked = true;
+Symbols.checked = true;
 
 limit.children[1].addEventListener("change", () => {
     value = limit.children[1].value;
@@ -25,45 +25,49 @@ function generate_char(a) {
     return String.fromCharCode(a);
 }
 function generate_password() {
-password="";
 
-    for (i = 1; i <= value; i++) {
-        let integer = Math.floor(Math.random() * 89 + 33);
-        if (Lower_case.checked == true && integer >= 97 && integer <= 122) {
-            let char = generate_char(integer);
-            password = password.concat(char);
-        }
-        else if (Upper_case.checked == true && integer >= 65 && integer <= 90) {
-            let char = generate_char(integer);
-            password = password.concat(char);
-        }
-        else if (Numbers.checked == true && integer >= 48 && integer <= 57) {
-            let char = generate_char(integer);
-            password = password.concat(char);
-        }
-        else if (Symbols.checked == true && integer >= 33 && integer <= 47 || Symbols.checked == true && integer >= 58 && integer <= 64) {
-            let char = generate_char(integer);
-            password = password.concat(char);
-        }
-        else {
-            i--;
-        }
+    if (Lower_case.checked == false && Upper_case.checked == false && Numbers.checked == false && Symbols.checked == false) {
+        Text.innerHTML = "Turn ON atleast one setting"
     }
-    Text.innerHTML="";
+    else {
+        password = "";
 
-    Text.innerHTML = password;
-    
+        for (i = 1; i <= value; i++) {
+            let integer = Math.floor(Math.random() * 89 + 33);
+            if (Lower_case.checked == true && integer >= 97 && integer <= 122) {
+                let char = generate_char(integer);
+                password = password.concat(char);
+            }
+            else if (Upper_case.checked == true && integer >= 65 && integer <= 90) {
+                let char = generate_char(integer);
+                password = password.concat(char);
+            }
+            else if (Numbers.checked == true && integer >= 48 && integer <= 57) {
+                let char = generate_char(integer);
+                password = password.concat(char);
+            }
+            else if (Symbols.checked == true && integer >= 33 && integer <= 47 || Symbols.checked == true && integer >= 58 && integer <= 64) {
+                let char = generate_char(integer);
+                password = password.concat(char);
+            }
+            else {
+                i--;
+            }
+        }
+        Text.innerHTML = "";
+
+        Text.innerHTML = password;
+    }
 }
 
-function copy()
-{
-var r = document.createRange();
-r.selectNode(document.querySelector(".text"));
-window.getSelection().removeAllRanges();
-window.getSelection().addRange(r);
-document.execCommand('copy');
-window.getSelection().removeAllRanges();
-alert("Password Copied To Clipboard")
+function copy() {
+    var r = document.createRange();
+    r.selectNode(document.querySelector(".text"));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    alert("Password Copied To Clipboard")
 }
 
 
