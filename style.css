@@ -38,7 +38,7 @@ nav p{
     flex-direction: column;
  
     border-radius: 10px;
-    width: 60%;
+    width: 60vw;
     
     background-color: #e5edf5;
 }
@@ -121,6 +121,7 @@ input:checked~.checkbox-container{
     border-radius: 10px;
     font-size: 20px;
     margin: 10px;
+    margin-bottom: 28px;
 }
 .container button:hover{
     cursor:pointer;

@@ -55,16 +55,15 @@ password="";
     
 }
 
-    const copy = async () => {
-        try {
-          await navigator.clipboard.writeText(password);
-          console.log('Content copied to clipboard');
-        } catch (err) {
-          console.error('Failed to copy: ', err);
-        }
-      }
-    
-
-
+function copy()
+{
+var r = document.createRange();
+r.selectNode(document.querySelector(".text"));
+window.getSelection().removeAllRanges();
+window.getSelection().addRange(r);
+document.execCommand('copy');
+window.getSelection().removeAllRanges();
+alert("Password Copied To Clipboard")
+}
 
 
