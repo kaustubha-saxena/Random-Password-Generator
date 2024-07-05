@@ -1,0 +1,64 @@
+@media only screen and (max-width:768px){
+    
+    nav p{
+        font-size: 36px;
+    }
+    .password{
+        height: 50px;
+    }
+    .password span{
+        font-size:18px ;
+    }
+    .length{
+        font-size:14px ;
+    }
+    .limit{
+        font-size: 16px ;
+        height: 50px;
+    }
+    .sett{
+        font-size:16px ;
+    }
+    .options{
+        font-size:16px ;
+        height: 40px;
+    }
+    .container button{
+        font-size: 20px ;
+        padding: 8px 62px;
+    }
+}
+
+@media only screen and (max-width:425px){
+    
+    nav p{
+        font-size: 30px;
+    }
+    .container{
+        width: 80vw;;
+    }
+    .password{
+        height: 50px;
+    }
+    .password span{
+        font-size:14px ;
+    }
+    .length{
+        font-size:14px ;
+    }
+    .limit{
+        font-size: 16px ;
+        height: 40px;
+    }
+    .sett{
+        font-size:16px ;
+    }
+    .options{
+        font-size:14px ;
+        height: 30px;
+    }
+    .container button{
+        font-size: 16px ;
+        padding: 4px 45px;
+    }
+}
